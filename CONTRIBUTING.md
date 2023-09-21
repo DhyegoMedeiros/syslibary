@@ -4,7 +4,7 @@ Agradecemos por considerar contribuir para o projeto SysLibary! Contribuições 
 
 ## Relatando Problemas
 
-Se você encontrar problemas ou bugs no sistema, sinta-se à vontade para relatar no [GitHub Issues](link para as issues do GitHub). Certifique-se de incluir detalhes claros e informações de contexto para que possamos entender e resolver o problema de forma eficaz.
+Se você encontrar problemas ou bugs no sistema, sinta-se à vontade para relatar no [GitHub Issues](https://github.com/DhyegoMedeiros/syslibary/issues). Certifique-se de incluir detalhes claros e informações de contexto para que possamos entender e resolver o problema de forma eficaz.
 
 ## Contribuindo com Código
 
@@ -21,7 +21,7 @@ Por favor, siga as boas práticas de codificação, mantenha o código limpo e d
 
 ## Discussões e Perguntas
 
-Se você tiver ideias, perguntas ou quiser discutir melhorias no projeto, sinta-se à vontade para iniciar uma discussão nas [GitHub Discussions](link para as discussões do GitHub). Estamos abertos a feedback e ideias construtivas.
+Se você tiver ideias, perguntas ou quiser discutir melhorias no projeto, sinta-se à vontade para iniciar uma discussão nas [GitHub Discussions](https://github.com/DhyegoMedeiros/syslibary/discussions). Estamos abertos a feedback e ideias construtivas.
 
 Agradecemos por sua contribuição para o projeto SysLibary!
 
