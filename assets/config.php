@@ -9,6 +9,9 @@ define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
 define('DBNAME', 'biblioteca');
+
+$PDO = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
+
 // Verificar se o usuário já está logado (por exemplo, se a sessão está definida)
 function verificalogado(){
 session_start();
@@ -17,6 +20,7 @@ session_start();
         exit;
     }
 }
+
 function verificadeslogado(){
     session_start();
     if (isset($_SESSION['cpf'])) {
@@ -25,13 +29,19 @@ function verificadeslogado(){
     }
 }
 
-$PDO = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
-
 // Função para gerar um "salt" exclusivo
 function generateUniqueSalt($length = 22) {
     $randomBytes = random_bytes($length);
     $salt = base64_encode($randomBytes);
     $salt = str_replace('+', '.', $salt);
     return substr($salt, 0, $length);
+}
+function sair(){
+    session_start();
+    session_destroy();
+}
+if (isset($_POST['action']) && $_POST['action'] === 'sair') {
+    // Chame a função sair() ou qualquer outra ação de logout
+    sair();
 }
 ?>

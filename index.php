@@ -1,11 +1,11 @@
-<?php include_once'assets/config.php';verificadeslogado();?>
+<?php require'assets/config.php';verificadeslogado();?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <link rel="shortcut icon" href="<?php echo($host.'/assets/img/icone.ico');?>" type="image/x-icon"/>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><?php echo($title);?></title>
+	<title>Login|<?php echo($title);?></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<style type="text/css">
