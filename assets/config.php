@@ -4,12 +4,26 @@ $host = 'https://syslibary.tk';
 $title = 'SysLibary System';
 date_default_timezone_set('America/Sao_Paulo');
 
-
 //Credenciais de acesso ao BD
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
 define('DBNAME', 'biblioteca');
+// Verificar se o usuário já está logado (por exemplo, se a sessão está definida)
+function verificalogado(){
+session_start();
+    if (!isset($_SESSION['cpf'])) {
+        header("Location: ../");
+        exit;
+    }
+}
+function verificadeslogado(){
+    session_start();
+    if (isset($_SESSION['cpf'])) {
+        header("Location: sistema/");
+        exit;
+    }
+}
 
 $PDO = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
 

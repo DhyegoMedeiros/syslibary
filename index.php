@@ -1,4 +1,4 @@
-<?php include_once'assets/config.php';?>
+<?php include_once'assets/config.php';verificadeslogado();?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,8 +22,7 @@
 	  	<button class="btn btn-outline-success text-white" type="button" data-toggle="modal" data-target="#modalLoginForm">Acessar</button>
 	</nav>
 	<div><!-- Encolhe o sistema Modal-->
-	    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-	  aria-hidden="true" style="top: 15%;">
+	    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="top: 15%;">
 	        <div class="modal-dialog" role="document">
 	            <div class="modal-content">
 	                <div class="modal-header text-center">

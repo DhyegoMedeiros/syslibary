@@ -26,7 +26,7 @@
     } else {
         // Usuário não encontrado no banco de dados
         echo "<script>alert('Usuário não encontrado.');</script>";
-        "<script>location.href='$host'</script>";
+        echo "<script>location.href='$host'</script>";
     }
     // Adicione essas linhas de depuração
 echo "Senha inserida: " . $senhaInserida . "<br>";
