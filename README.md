@@ -31,7 +31,7 @@ Este projeto é licenciado sob a [Licença MIT](LICENSE), o que significa que vo
 
 ## Contato
 
-Para dúvidas ou sugestões, entre em contato conosco em [email@example.com].
+Para dúvidas ou sugestões, entre em contato conosco em [diego@lbnetwork.com.br].
 
 ---
 Desenvolvido com ❤️ pela equipe SysLibary.
