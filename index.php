@@ -18,7 +18,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-success bg-success text-white">
-		<a class="navbar-brand text-white" href="#"><?php echo($title);?></a>
+		<a class="navbar-brand text-white" href="<?php echo($host);?>"><?php echo($title);?></a>
 	  	<button class="btn btn-outline-success text-white" type="button" data-toggle="modal" data-target="#modalLoginForm">Acessar</button>
 	</nav>
 	<div><!-- Encolhe o sistema Modal-->

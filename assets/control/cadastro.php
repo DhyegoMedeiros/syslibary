@@ -22,13 +22,7 @@ if (isset($_POST['matricula']) && isset($_POST['senha'])) {
     $stmt->bindParam(':senha', $hashedPassword);
     $stmt->bindParam(':salt', $salt);
     $stmt->execute();
-
-    // Redirecionar ou exibir uma mensagem de sucesso
-    //echo "Usuário registrado com sucesso.<br>";
-    //echo "Matrícula: " . $matricula . "<br>";
-    //echo "Senha com salt: " . $senhaComSalt . "<br>";
-    //echo "Hash da senha: " . $hashedPassword . "<br>";
-    //echo "Salt: " . $salt . "<br>";
+    
     $_SESSION['cpf'] = $matricula;
     echo "<script>location.href='$host/sistema'</script>";
 } else {

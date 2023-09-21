@@ -28,8 +28,4 @@
         echo "<script>alert('Usuário não encontrado.');</script>";
         echo "<script>location.href='$host'</script>";
     }
-    // Adicione essas linhas de depuração
-echo "Senha inserida: " . $senhaInserida . "<br>";
-echo "Hash da senha no banco de dados: " . $hashedPasswordDB . "<br>";
-echo "Salt: " . $salt . "<br>";
 ?>

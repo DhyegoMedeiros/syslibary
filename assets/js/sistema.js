@@ -1,20 +1,3 @@
-// Obtém o elemento de link de saída pelo ID 'sair-link'
-var sairLink = document.getElementById('sair-link');
-
-// Adiciona um ouvinte de clique ao link de saída
-sairLink.addEventListener('click', function() {
-    // Envia uma solicitação AJAX para '../config.php' com uma ação 'sair'
-    $.ajax({
-        url: '../config.php',
-        method: 'POST',
-        data: { action: 'sair' }, // Envia uma ação 'sair' como parte da solicitação
-        success: function(data) {
-            // Redireciona para a página em branco após o logout
-            window.location.href = '';
-        }
-    });
-});
-
 // Efeito de animação ativa para navegação responsiva
 function test() {
     var tabsNewAnim = $('#navbarSupportedContent');
