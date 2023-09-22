@@ -5,7 +5,7 @@
         <link rel="shortcut icon" href="<?php echo($host.'/assets/img/icone.ico');?>" type="image/x-icon"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Inicio|<?php echo($title);?></title>     
+        <title><?php $file = ucfirst($file); $file = substr($file, 0, -4); echo($file.'|'.$title);?></title>  
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
         <link rel="stylesheet" href="../assets/css/style_sistema.css">
@@ -24,22 +24,22 @@
                 <ul class="navbar-nav ml-auto">
                     <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                     <li class="nav-item active">
-                        <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        <a class="nav-link" href="home"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Usuários</a>
+                        <a class="nav-link" href="usuarios"><i class="far fa-address-book"></i>Usuários</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="fas fa-search"></i>Pesquisa</a>
+                        <a class="nav-link" href="pesquisa"><i class="fas fa-search"></i>Pesquisa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Emprestimos</a>
+                        <a class="nav-link" href="emprestimo"><i class="far fa-calendar-alt"></i>Emprestimos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Relatorios</a>
+                        <a class="nav-link" href="relatorios"><i class="far fa-chart-bar"></i>Relatorios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documentos</a>
+                        <a class="nav-link" href="documentos"><i class="far fa-copy"></i>Documentos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0);" id="sair-link"><i class="fas fa-times-circle"></i>Sair</a>
@@ -50,7 +50,6 @@
         <script src="../assets/js/sistema.js"></script>
         <script>// Obtém o elemento de link de saída pelo ID 'sair-link'
             var sairLink = document.getElementById('sair-link');
-
             // Adiciona um ouvinte de clique ao link de saída
             sairLink.addEventListener('click', function() {
                 // Envia uma solicitação AJAX para '../config.php' com uma ação 'sair'
