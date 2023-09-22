@@ -2,7 +2,7 @@
 	session_start();
 	require("../config.php");
 	$matricula = $_POST['matricula'];
-    $sql = $PDO->prepare("SELECT cpf, senha, salt FROM bibliotecario WHERE cpf=:cpf");
+    $sql = $PDO->prepare("SELECT cpf, senha, salt, sts_nivel FROM bibliotecario WHERE cpf=:cpf and sts_nivel='1'");
     $sql->bindParam(':cpf', $matricula);
     $sql->execute();
 
@@ -25,7 +25,7 @@
         }
     } else {
         // Usuário não encontrado no banco de dados
-        echo "<script>alert('Usuário não encontrado.');</script>";
+        echo "<script>alert('Usuário não encontrado, ou você não tem acesso.');</script>";
         echo "<script>location.href='$host'</script>";
     }
 ?>
