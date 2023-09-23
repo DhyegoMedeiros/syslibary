@@ -143,7 +143,7 @@
             <p data-p="NOT FOUND">PÁGINA NÃO ENCONTRADA</p>
         </div>
     </div>
-    <a href="<?php echo $host;?>" class="back">VOLTAR</a>
+    <a href="<?php echo $host;?>" class="back">VOLTAR AO INICIO!</a>
     <div id="tsparticles"></div>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>

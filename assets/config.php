@@ -10,11 +10,13 @@ define('USER', 'root');
 define('PASS', '');
 define('DBNAME', 'syslibary');
 
+$anoAtual = date("Y");
+
 $PDO = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
 
 // Verificar se o usuário já está logado (por exemplo, se a sessão está definida)
 function verificalogado(){
-session_start();
+    session_start();
     if (!isset($_SESSION['cpf'])) {
         header("Location: ../");
         exit;

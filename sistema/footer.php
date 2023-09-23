@@ -1,4 +1,7 @@
-rodape
+<footer class="rodape bgGradient">
+    <p class="direitos">Copyrigth © <?php echo ($title.' '.$anoAtual)?>. Todos os direitos reservados</p>
+</footer>
+
 <script src="../assets/js/sistema.js"></script>
         <script>// Obtém o elemento de link de saída pelo ID 'sair-link'
             var sairLink = document.getElementById('sair-link');

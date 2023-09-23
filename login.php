@@ -14,6 +14,24 @@
  			background-repeat: no-repeat;
  			background-size: 100%;
         }
+		/** FOOTER **/
+		.bgGradient {
+			background:  linear-gradient( to right, #28a745, #12b937 );
+			width: 100%;
+		}
+		.rodape {
+			position: fixed;
+			bottom: 0;
+			padding:0px;
+			margin-bottom: 0px;
+			margin-top:0px;
+			text-align: center;
+		}
+
+		.direitos {
+			margin-top: 1%;
+			color: #fff;
+		}
 	</style>
 </head>
 <body>
@@ -52,6 +70,9 @@
             </div>
         </div>
     </div>
+	<footer class="rodape bgGradient">
+    	<p class="direitos">Copyrigth © <?php echo ($title.' '.$anoAtual)?>. Todos os direitos reservados</p>
+	</footer>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

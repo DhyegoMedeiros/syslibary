@@ -115,6 +115,25 @@ bottom: 0;
 left: -25px;
 }
 
+/** FOOTER **/
+.bgGradient {
+	background:  linear-gradient( to right, #28a745, #12b937 );
+    width: 100%;
+}
+.rodape {
+    position: fixed;
+    bottom: 0;
+	padding:0px;
+	margin-bottom: 0px;
+	margin-top:0px;
+    text-align: center;
+}
+
+.direitos {
+	margin-top: 1%;
+	color: #fff;
+}
+
 
 @media(min-width: 992px){
 .navbar-expand-custom {
