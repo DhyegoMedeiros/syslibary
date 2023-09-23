@@ -8,7 +8,7 @@ date_default_timezone_set('America/Sao_Paulo');
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('DBNAME', 'biblioteca');
+define('DBNAME', 'syslibary');
 
 $PDO = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME . ';', USER, PASS);
 

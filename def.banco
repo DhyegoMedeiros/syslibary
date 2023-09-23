@@ -1,0 +1,229 @@
+Table usuario {
+  id integer [primary key]
+  nome varchar(255)
+  cpf varchar(14)
+  data_nascimento date
+  sexo char(1)
+  nome_rua varchar(60)
+  numero_residencia varchar(10)
+  complemento varchar(255)
+  bairro varchar(60)
+  cidade varchar(60)
+  cep varchar(10)
+  telefone varchar(15)
+  email varchar(255)
+  nome_mae varchar(255)
+  nome_pai varchar(255)
+  numero_matricula varchar(8)
+  data_cadastro datetime
+}
+
+Table acesso {
+  id integer [primary key]
+  id_usuario integer
+  nickname varchar(255)
+  senha varchar(255)
+  salt varchar(255)
+  sts_nivel varchar(1)
+  data_cadastro datetime
+}
+
+Table nivel {
+  id integer [primary key]
+  nivel varchar(60)
+  sts_nivel integer(1)
+}
+
+Table livro {
+  id integer [primary key]
+  titulo varchar(255)
+  autor_id integer
+  editora_id integer
+  ano_publicacao varchar(4)
+  genero_id integer
+  isbn varchar(13)
+  idioma_id integer
+  data_cadastro datetime
+}
+
+Table autor {
+  id integer [primary key]
+  nome varchar(255)
+  pais varchar(255)
+  data_cadastro datetime
+}
+
+Table editora {
+  id integer [primary key]
+  nome varchar(255)
+  cidade varchar(255)
+  pais varchar(255)
+  data_cadastro datetime
+}
+
+Table genero {
+  id integer [primary key]
+  nome varchar(255)
+  data_cadastro datetime
+}
+
+Table idioma {
+  id integer [primary key]
+  nome varchar(50)
+  data_cadastro datetime
+}
+
+Table status {
+  id integer [primary key]
+  nome varchar(20)
+  descricao varchar(255)
+}
+
+Table tombo {
+  id integer [primary key]
+  livro_id integer
+  numero_tombo varchar(20)
+  situacao varchar(20)
+}
+
+Table emprestimo {
+  id integer [primary key]
+  usuario_id integer
+  livro_id integer
+  data_emprestimo date
+  data_devolucao date
+  status_id integer
+  tombo_id integer
+  data_cadastro datetime
+}
+
+Ref: emprestimo.status_id > status.id
+Ref: emprestimo.livro_id > livro.id
+Ref: emprestimo.usuario_id > usuario.id
+Ref: emprestimo.tombo_id > tombo.id
+Ref: acesso.sts_nivel > nivel.sts_nivel
+Ref: usuario.id > acesso.id_usuario
+Ref: livro.autor_id > autor.id
+Ref: livro.editora_id > editora.id
+Ref: livro.genero_id > genero.id
+Ref: livro.idioma_id > idioma.id
+Ref: tombo.livro_id < livro.id
+
+
+Table usuario {
+  id integer [primary key]                 -- ID único do usuário
+  nome varchar(255)                        -- Nome do usuário
+  cpf varchar(14)                          -- CPF do usuário
+  data_nascimento date                     -- Data de nascimento do usuário
+  sexo char(1)                             -- Sexo do usuário
+  nome_rua varchar(60)                     -- Nome da rua do endereço do usuário
+  numero_residencia varchar(10)            -- Número da residência do usuário
+  complemento varchar(255)                 -- Complemento do endereço do usuário
+  bairro varchar(60)                       -- Bairro do usuário
+  cidade varchar(60)                       -- Cidade do usuário
+  cep varchar(10)                          -- CEP (Código de Endereçamento Postal) do usuário
+  telefone varchar(15)                     -- Número de telefone do usuário
+  email varchar(255)                       -- Endereço de email do usuário
+  nome_mae varchar(255)                    -- Nome da mãe do usuário
+  nome_pai varchar(255)                    -- Nome do pai do usuário
+  numero_matricula varchar(8)              -- Número de matrícula do usuário
+  data_cadastro datetime                   -- Data de cadastro do usuário
+}
+
+Table acesso {
+  id integer [primary key]                 -- ID único do acesso
+  id_usuario integer                       -- ID do usuário associado a este acesso
+  nickname varchar(255)                    -- Nickname do acesso
+  senha varchar(255)                       -- Senha do acesso
+  salt varchar(255)                        -- Salt para a senha
+  sts_nivel varchar(1)                     -- Nível de status do acesso
+  data_cadastro datetime                   -- Data de cadastro do acesso
+  INDEX (id_usuario)                       -- Adicionando um índice à coluna id_usuario
+  INDEX (sts_nivel)                        -- Adicionando um índice à coluna sts_nivel
+}
+
+Table nivel {
+  id integer [primary key]                 -- ID único do nível
+  nivel varchar(60)                        -- Nome do nível
+  sts_nivel integer(1)                     -- Status do nível
+  INDEX (sts_nivel)                        -- Adicionando um índice à coluna sts_nivel
+}
+
+Table livro {
+  id integer [primary key]                 -- ID único do livro
+  titulo varchar(255)                      -- Título do livro
+  autor_id integer                         -- ID do autor do livro
+  editora_id integer                       -- ID da editora do livro
+  ano_publicacao varchar(4)                -- Ano de publicação do livro
+  genero_id integer                        -- ID do gênero do livro
+  isbn varchar(13)                         -- ISBN do livro
+  idioma_id integer                        -- ID do idioma do livro
+  data_cadastro datetime                   -- Data de cadastro do livro
+}
+
+Table autor {
+  id integer [primary key]                 -- ID único do autor
+  nome varchar(255)                        -- Nome do autor
+  pais varchar(255)                        -- País de origem do autor
+  data_cadastro datetime                   -- Data de cadastro do autor
+}
+
+Table editora {
+  id integer [primary key]                 -- ID único da editora
+  nome varchar(255)                        -- Nome da editora
+  cidade varchar(255)                      -- Cidade da editora
+  pais varchar(255)                        -- País da editora
+  data_cadastro datetime                   -- Data de cadastro da editora
+}
+
+Table genero {
+  id integer [primary key]                 -- ID único do gênero
+  nome varchar(255)                        -- Nome do gênero
+  data_cadastro datetime                   -- Data de cadastro do gênero
+}
+
+Table idioma {
+  id integer [primary key]                 -- ID único do idioma
+  nome varchar(50)                         -- Nome do idioma
+  data_cadastro datetime                   -- Data de cadastro do idioma
+}
+
+Table status {
+  id integer [primary key]                 -- ID único do status
+  nome varchar(20)                         -- Nome do status
+  descricao varchar(255)                   -- Descrição do status
+}
+
+Table tombo {
+  id integer [primary key]                 -- ID único do tombo
+  livro_id integer                         -- ID do livro associado ao tombo
+  numero_tombo varchar(20)                 -- Número do tombo
+  situacao varchar(20)                     -- Situação do tombo
+}
+
+Table emprestimo {
+  id integer [primary key]                 -- ID único do empréstimo
+  usuario_id integer                       -- ID do usuário associado ao empréstimo
+  livro_id integer                         -- ID do livro associado ao empréstimo
+  data_emprestimo date                     -- Data de empréstimo
+  data_devolucao date                      -- Data de devolução
+  status_id integer                        -- ID do status do empréstimo
+  tombo_id integer                         -- ID do tombo associado ao empréstimo
+  data_cadastro datetime                   -- Data de cadastro do empréstimo
+  INDEX (status_id)                        -- Adicionando um índice à coluna status_id
+  INDEX (livro_id)                         -- Adicionando um índice à coluna livro_id
+  INDEX (usuario_id)                       -- Adicionando um índice à coluna usuario_id
+  INDEX (tombo_id)                         -- Adicionando um índice à coluna tombo_id
+}
+
+Ref: emprestimo.status_id > status.id      -- ID do status do empréstimo
+Ref: emprestimo.livro_id > livro.id        -- ID do livro do empréstimo
+Ref: emprestimo.usuario_id > usuario.id    -- ID do usuário do empréstimo
+Ref: emprestimo.tombo_id > tombo.id        -- ID do tombo do empréstimo
+Ref: acesso.sts_nivel > nivel.sts_nivel    -- Status do nível de acesso
+Ref: usuario.id > acesso.id_usuario        -- ID do usuário associado ao acesso
+Ref: livro.autor_id > autor.id              -- ID do autor do livro
+Ref: livro.editora_id > editora.id          -- ID da editora do livro
+Ref: livro.genero_id > genero.id            -- ID do gênero do livro
+Ref: livro.idioma_id > idioma.id            -- ID do idioma do livro
+Ref: tombo.livro_id < livro.id              -- ID do livro associado ao tombo

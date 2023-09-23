@@ -2,8 +2,8 @@
 	session_start();
 	require("../config.php");
 	$matricula = $_POST['matricula'];
-    $sql = $PDO->prepare("SELECT cpf, senha, salt, sts_nivel FROM bibliotecario WHERE cpf=:cpf and sts_nivel='1'");
-    $sql->bindParam(':cpf', $matricula);
+    $sql = $PDO->prepare("SELECT nickname, senha, salt, sts_nivel FROM acesso WHERE nickname=:nickname and sts_nivel='1'");
+    $sql->bindParam(':nickname', $matricula);
     $sql->execute();
 
     if ($sql->rowCount() > 0) {
