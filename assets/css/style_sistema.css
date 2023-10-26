@@ -3,6 +3,7 @@ body {
     background-image: url("../img/fundo.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: 0% 8%;
     font-family: 'Roboto', sans-serif;
 }
 * {

@@ -1,5 +1,4 @@
 <?php
-
     $url = (isset($_GET['url'])) ? rtrim($_GET['url'], '/') : 'home';
     $url = array_filter(explode('/', $url));
     $file = $url[0];
